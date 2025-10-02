@@ -7,6 +7,7 @@ WORKDIR /app
 COPY gradlew settings.gradle build.gradle ./
 COPY gradle/ ./gradle
 
+RUN chmod +x ./gradlew
 # Download dependencies (skip tests and daemon for a reliable build)
 RUN ./gradlew dependencies --no-daemon
 
